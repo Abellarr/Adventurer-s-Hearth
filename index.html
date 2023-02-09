@@ -34,13 +34,50 @@
                     </button>
                 </h3>
                 <div id="statsCollapse" class="accordion-collapse collapse" aria-labelledby="charStatsHead" data-bs-parent="#leftMenu">
-                    <div id="charStatsBody" class="accordion-body bg-dark-subtle">
+                    <div id="charStatsBody" class="accordion-body bg-secondary-subtle">
                         <button id='str' type="button" class="d-block btn btn-primary-subtle">Strength</button>
                         <button id='dex' type="button" class="d-block btn btn-primary-subtle">Dexterity</button>
                         <button id='con' type="button" class="d-block btn btn-primary-subtle">Constitution</button>
                         <button id='int' type="button" class="d-block btn btn-primary-subtle">Intelligence</button>
                         <button id='wis' type="button" class="d-block btn btn-primary-subtle">Wisdom</button>
                         <button id='cha' type="button" class="d-block btn btn-primary-subtle">Charisma</button>
+                    </div>
+                </div>
+            </div>
+            <div id="playerRace" class="accordion-item">
+                <h3 id='playerRaceHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#playerRaceCollapse" aria-expanded="true" aria-controls="playerRaceCollapse">
+                        Player Races
+                    </button>
+                </h3>
+                <div id="playerRaceCollapse" class="accordion-collapse collapse" aria-labelledby="playerRaceHead" data-bs-parent="#leftMenu">
+                    <div id="playerRaceBody" class="accordion-body bg-secondary-subtle">
+                        <button id='Dragonborn' type="button" class="d-block btn btn-primary-subtle">Dragonborn</button>
+                        <button id='Dwarf' type="button" class="d-block btn btn-primary-subtle">Dwarf</button>
+                        <button id='Elf' type="button" class="d-block btn btn-primary-subtle">Elf</button>
+                        <button id='Gnome' type="button" class="d-block btn btn-primary-subtle">Gnome</button>
+                        <button id='Half-Elf' type="button" class="d-block btn btn-primary-subtle">Half-Elf</button>
+                        <button id='Half-Orc' type="button" class="d-block btn btn-primary-subtle">Half-Orc</button>
+                        <button id='Halfling' type="button" class="d-block btn btn-primary-subtle">Halfling</button>
+                        <button id='Human' type="button" class="d-block btn btn-primary-subtle">Human</button>
+                        <button id='Tiefling' type="button" class="d-block btn btn-primary-subtle">Tiefling</button>
+                    </div>
+                </div>
+            </div>
+            <div id="charFeatures" class="accordion-item">
+                <h3 id='charFeaturesHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#charFeaturesCollapse" aria-expanded="true" aria-controls="charFeaturesCollapse">
+                        Character Features
+                    </button>
+                </h3>
+                <div id="charFeaturesCollapse" class="accordion-collapse collapse" aria-labelledby="charFeaturesHead" data-bs-parent="#leftMenu">
+                    <div id="charFeaturesBody" class="accordion-body bg-secondary-subtle">
+                        <button id='Alignment' type="button" class="d-block btn btn-primary-subtle">Lawful Good</button>
+                        <button id='Backgrounds' type="button" class="d-block btn btn-primary-subtle">Neutral Good</button>
+                        <button id='Inspiration' type="button" class="d-block btn btn-primary-subtle">Chaotic Good</button>
+                        <button id='Languages' type="button" class="d-block btn btn-primary-subtle">Lawful Neutral</button>
+                        <button id='Leveling Up' type="button" class="d-block btn btn-primary-subtle">Neutral</button>
+                        <button id='Multiclassing' type="button" class="d-block btn btn-primary-subtle">Multiclassing</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +88,7 @@
                     </button>
                 </h3>
                 <div id="classesCollapse" class="accordion-collapse collapse" aria-labelledby="playerClassHead" data-bs-parent="#leftMenu">
-                    <div id="playerClassBody" class="accordion-body">
+                    <div id="playerClassBody" class="accordion-body bg-secondary-subtle">
                         <button id='Barbarian' type="button" class="d-block btn btn-primary-subtle">Barbarian</button>
                         <button id='Bard' type="button" class="d-block btn btn-primary-subtle">Bard</button>
                         <button id='Cleric' type="button" class="d-block btn btn-primary-subtle">Cleric</button>
@@ -67,26 +104,6 @@
                     </div>
                 </div>
             </div>
-            <div id="playerRace" class="accordion-item">
-                <h3 id='playerRaceHead' class="accordion-header">
-                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#playerRaceCollapse" aria-expanded="true" aria-controls="playerRaceCollapse">
-                        Player Races
-                    </button>
-                </h3>
-                <div id="playerRaceCollapse" class="accordion-collapse collapse" aria-labelledby="playerRaceHead" data-bs-parent="#leftMenu">
-                    <div id="playerRaceBody" class="accordion-body">
-                        <button id='Dragonborn' type="button" class="d-block btn btn-primary-subtle">Dragonborn</button>
-                        <button id='Dwarf' type="button" class="d-block btn btn-primary-subtle">Dwarf</button>
-                        <button id='Elf' type="button" class="d-block btn btn-primary-subtle">Elf</button>
-                        <button id='Gnome' type="button" class="d-block btn btn-primary-subtle">Gnome</button>
-                        <button id='Half-Elf' type="button" class="d-block btn btn-primary-subtle">Half-Elf</button>
-                        <button id='Half-Orc' type="button" class="d-block btn btn-primary-subtle">Half-Orc</button>
-                        <button id='Halfling' type="button" class="d-block btn btn-primary-subtle">Halfling</button>
-                        <button id='Human' type="button" class="d-block btn btn-primary-subtle">Human</button>
-                        <button id='Tiefling' type="button" class="d-block btn btn-primary-subtle">Tiefling</button>
-                    </div>
-                </div>
-            </div>
             <div id="skillProf" class="accordion-item">
                 <h3 id='skillProfHead' class="accordion-header">
                     <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#skillsCollapse" aria-expanded="true" aria-controls="skillsCollapse">
@@ -94,7 +111,7 @@
                     </button>
                 </h3>
                 <div id="skillsCollapse" class="accordion-collapse collapse" aria-labelledby="skillProfHead" data-bs-parent="#leftMenu">
-                    <div id="skillProfBody" class="accordion-body">
+                    <div id="skillProfBody" class="accordion-body bg-secondary-subtle">
                         <button id='Acrobatics' type="button" class="d-block btn btn-primary-subtle">Acrobatics</button>
                         <button id='Athletics' type="button" class="d-block btn btn-primary-subtle">Athletics</button>
                         <button id='Deception' type="button" class="d-block btn btn-primary-subtle">Deception</button>
@@ -114,28 +131,70 @@
                     </div>
                 </div>
             </div>
-            <div id="alignment" class="accordion-item">
-                <h3 id='alignmentHead' class="accordion-header">
-                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#alignmentCollapse" aria-expanded="true" aria-controls="alignmentCollapse">
-                        Alignments
+            <div id="equipment" class="accordion-item">
+                <h3 id='equipmentHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#equipmentCollapse" aria-expanded="true" aria-controls="equipmentCollapse">
+                        Equipment
                     </button>
                 </h3>
-                <div id="alignmentCollapse" class="accordion-collapse collapse" aria-labelledby="alignmentHead" data-bs-parent="#leftMenu">
-                    <div id="alignmentBody" class="accordion-body">
-                        <button id='Lawful Good' type="button" class="d-block btn btn-primary-subtle">Lawful Good</button>
-                        <button id='Neutral Good' type="button" class="d-block btn btn-primary-subtle">Neutral Good</button>
-                        <button id='Chaotic Good' type="button" class="d-block btn btn-primary-subtle">Chaotic Good</button>
-                        <button id='Lawful Neutral' type="button" class="d-block btn btn-primary-subtle">Lawful Neutral</button>
-                        <button id='Neutral' type="button" class="d-block btn btn-primary-subtle">Neutral</button>
-                        <button id='Chaotic Neutral' type="button" class="d-block btn btn-primary-subtle">Chaotic Neutral</button>
-                        <button id='Lawful Evil' type="button" class="d-block btn btn-primary-subtle">Lawful Evil</button>
-                        <button id='Neutral Evil' type="button" class="d-block btn btn-primary-subtle">Neutral Evil</button>
-                        <button id='Chaotic Evil' type="button" class="d-block btn btn-primary-subtle">Chaotic Evil</button>
+                <div id="equipmentCollapse" class="accordion-collapse collapse" aria-labelledby="equipmentHead" data-bs-parent="#leftMenu">
+                    <div id="equipmentBody" class="accordion-body bg-secondary-subtle">
+                        <button id='Armor' type="button" class="d-block btn btn-primary-subtle">Armor</button>
+                        <button id='Weapons' type="button" class="d-block btn btn-primary-subtle">Weapons</button>
+                        <button id='Magic Items' type="button" class="d-block btn btn-primary-subtle">Magic Items</button>
+                        <button id='Adventuring Gear' type="button" class="d-block btn btn-primary-subtle">Adventuring Gear</button>
+                        <button id='Tools' type="button" class="d-block btn btn-primary-subtle">Tools</button>
+                        <button id='Mounts and Vehicles' type="button" class="d-block btn btn-primary-subtle">Mounts and Vehicles</button>
+                        <button id='Trade Goods' type="button" class="d-block btn btn-primary-subtle">Trade Goods</button>
+                        <button id='Expenses' type="button" class="d-block btn btn-primary-subtle">Expenses</button>
+                    </div>
+                </div>
+            </div>
+            <div id="combat" class="accordion-item">
+                <h3 id='combatHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#combatCollapse" aria-expanded="true" aria-controls="combatCollapse">
+                        Combat
+                    </button>
+                </h3>
+                <div id="combatCollapse" class="accordion-collapse collapse" aria-labelledby="combatHead" data-bs-parent="#leftMenu">
+                    <div id="combatBody" class="accordion-body bg-secondary-subtle">
+                        <button id='Conditions' type="button" class="d-block btn btn-primary-subtle">Conditions</button>
+                        <button id='Diseases' type="button" class="d-block btn btn-primary-subtle">Diseases</button>
+                        <button id='Madness' type="button" class="d-block btn btn-primary-subtle">Madness</button>
+                        <button id='Objects' type="button" class="d-block btn btn-primary-subtle">Objects</button>
+                        <button id='Poisons' type="button" class="d-block btn btn-primary-subtle">Poisons</button>
+                        <button id='Traps' type="button" class="d-block btn btn-primary-subtle">Traps</button>
+                        <button id='Poisons' type="button" class="d-block btn btn-primary-subtle">Poisons</button>
+                        <button id='Traps' type="button" class="d-block btn btn-primary-subtle">Traps</button>
+                    </div>
+                </div>
+            </div>
+            <div id="gameMech" class="accordion-item">
+                <h3 id='gameMechHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#gameMechCollapse" aria-expanded="true" aria-controls="gameMechCollapse">
+                        Gameplay Mechanics
+                    </button>
+                </h3>
+                <div id="gameMechCollapse" class="accordion-collapse collapse" aria-labelledby="gameMechHead" data-bs-parent="#leftMenu">
+                    <div id="gameMechBody" class="accordion-body bg-secondary-subtle">
+                        <button id='Ability Scores' type="button" class="d-block btn btn-primary-subtle">Ability Scores</button>
+                        <button id='Between Adventures' type="button" class="d-block btn btn-primary-subtle">Between Adventures</button>
+                        <button id='Environment' type="button" class="d-block btn btn-primary-subtle">Environment</button>
+                        <button id='Movement' type="button" class="d-block btn btn-primary-subtle">Movement</button>
+                        <button id='Rest' type="button" class="d-block btn btn-primary-subtle">Rest</button>
+                        <button id='Saving Throws' type="button" class="d-block btn btn-primary-subtle">Saving Throws</button>
+                        <button id='Time' type="button" class="d-block btn btn-primary-subtle">Time</button>
+                        <button id='Conditions' type="button" class="d-block btn btn-primary-subtle">Conditions</button>
+                        <button id='Diseases' type="button" class="d-block btn btn-primary-subtle">Diseases</button>
+                        <button id='Madness' type="button" class="d-block btn btn-primary-subtle">Madness</button>
+                        <button id='Objects' type="button" class="d-block btn btn-primary-subtle">Objects</button>
+                        <button id='Poisons' type="button" class="d-block btn btn-primary-subtle">Poisons</button>
+                        <button id='Traps' type="button" class="d-block btn btn-primary-subtle">Traps</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5'>
+        <div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5 pb-4'>
             <p id='statName' class='display-4 fst-italic text-center mb-4'>Pull up a seat and get comfortable...</p>
         </div>
     </div>

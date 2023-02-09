@@ -1,8 +1,8 @@
 $('#infoContainer').append(`<p id='introText1' class='text-start fw-light fs-4 mb-5'></p>`);
 $('#introText1').text(`Welcome to The Adventurer's Hearth, the inn on the side of the road to wherever your headed that every adventure seems to start. Gather friends and peruse the topics here in our library, then get started on an adventure of your own!`)
-$('#infoContainer').append(`<p id='introText2' class='text-start fw-light fst-italic fs-5'></p>`);
+$('#infoContainer').append(`<p id='introText2' class='text-start fw-light fst-italic fs-5 mb-5'></p>`);
 $('#introText2').text(`On the left side of your screen, you'll see a navigation bar that will spirit you away to whatever topic you wish to learn more about. All material is referenced from the official Dungeons and Dragons 5th Edition System Reference Document (SRD 5.1) and covered by the Open-Gaming License (OGL 1.0a). At the top of the page, you'll find links that travel across the multiverse to libraries on different planes of existence- even some with knowledge we've never seen!`)
-$('#infoContainer').append(`<img id='introImage' class=''></p>`);
+$('#infoContainer').append(`<img id='introImage' src='https://images.alphacoders.com/110/thumb-1920-1107087.jpg' class='img-fluid rounded-3 border border-black shadow'></p>`);
 
 $('#charStatsBody').on('click', function() {
     let eventTarget = event.target;
