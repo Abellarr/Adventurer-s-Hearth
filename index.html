@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+    <title>DnD 5th edition info</title>
+</head>
+<body class="bg-secondary bg-opacity-25">
+    <img id="bgImage" src="https://i.imgur.com/QrLSPUv.jpeg" class="img-fluid z-n1 position-absolute" width="3825" height="4950" alt="background vellum">
+    <div id="titleBar" class="container-fluid d-inline-block mb-2 z-1 position-relative bg-danger border border-dark rounded-3">
+        <img src="https://freesvg.org/img/dragon_ampersand.png" id="titleLogo" class="img-fluid z-3 position-absolute align-top" alt="DnD Logo" width="150" height="150">
+        <div id="titleBarBlock" class="d-inline-block w-75">
+            <p id="title" class="d-flex float-end display-1 text-center text-black ms-5 pe-5 ps-5 fst-italic fw-bold">The Adventurer's Hearth</p>
+            <p id="disclaimer" class="d-flex float-end text-center text-black ms-5 mb-2 ps-5 fst-italic fw-bold">*Mind the fire, would you? I'm sure the barkeep will be right with you.*</p>
+        </div>
+        <div class="btn-group d-flex justify-content-center" role="toolbar" aria-label="Top toolbar">
+            <a id="dndBeyond" type="button" class="btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://www.dndbeyond.com/" role="button">D&D Beyond</a>
+            <a id="worldAnvil" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://www.worldanvil.com/">World Anvil</a>
+            <a id="dndHomebrew" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://www.dandwiki.com/wiki/5e_Homebrew">D&D Homebrew Wiki</a>
+            <a id="donJon" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://donjon.bin.sh/5e/">DonJon</a>
+            <a id="roll20" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://roll20.net/">Roll20</a>
+        </div>
+    </div>
+    <div id="infoBox">
+        <div id='leftMenu' class="accordion d-inline-block w-15 me-0 shadow">
+            <div id="charStats" class="accordion-item">
+                <h3 id='charStatsHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#statsCollapse" aria-expanded="true" aria-controls="statsCollapse">
+                        Character Stats
+                    </button>
+                </h3>
+                <div id="statsCollapse" class="accordion-collapse collapse" aria-labelledby="charStatsHead" data-bs-parent="#leftMenu">
+                    <div id="charStatsBody" class="accordion-body bg-dark-subtle">
+                        <button id='str' type="button" class="d-block btn btn-primary-subtle">Strength</button>
+                        <button id='dex' type="button" class="d-block btn btn-primary-subtle">Dexterity</button>
+                        <button id='con' type="button" class="d-block btn btn-primary-subtle">Constitution</button>
+                        <button id='int' type="button" class="d-block btn btn-primary-subtle">Intelligence</button>
+                        <button id='wis' type="button" class="d-block btn btn-primary-subtle">Wisdom</button>
+                        <button id='cha' type="button" class="d-block btn btn-primary-subtle">Charisma</button>
+                    </div>
+                </div>
+            </div>
+            <div id="playerClass" class="accordion-item">
+                <h3 id='playerClassHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#classesCollapse" aria-expanded="true" aria-controls="classesCollapse">
+                        Player Classes
+                    </button>
+                </h3>
+                <div id="classesCollapse" class="accordion-collapse collapse" aria-labelledby="playerClassHead" data-bs-parent="#leftMenu">
+                    <div id="playerClassBody" class="accordion-body">
+                        <button id='Barbarian' type="button" class="d-block btn btn-primary-subtle">Barbarian</button>
+                        <button id='Bard' type="button" class="d-block btn btn-primary-subtle">Bard</button>
+                        <button id='Cleric' type="button" class="d-block btn btn-primary-subtle">Cleric</button>
+                        <button id='Druid' type="button" class="d-block btn btn-primary-subtle">Druid</button>
+                        <button id='Fighter' type="button" class="d-block btn btn-primary-subtle">Fighter</button>
+                        <button id='Monk' type="button" class="d-block btn btn-primary-subtle">Monk</button>
+                        <button id='Paladin' type="button" class="d-block btn btn-primary-subtle">Paladin</button>
+                        <button id='Ranger' type="button" class="d-block btn btn-primary-subtle">Ranger</button>
+                        <button id='Rogue' type="button" class="d-block btn btn-primary-subtle">Rogue</button>
+                        <button id='Sorcerer' type="button" class="d-block btn btn-primary-subtle">Sorcerer</button>
+                        <button id='Warlock' type="button" class="d-block btn btn-primary-subtle">Warlock</button>
+                        <button id='Wizard' type="button" class="d-block btn btn-primary-subtle">Wizard</button>
+                    </div>
+                </div>
+            </div>
+            <div id="playerRace" class="accordion-item">
+                <h3 id='playerRaceHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#playerRaceCollapse" aria-expanded="true" aria-controls="playerRaceCollapse">
+                        Player Races
+                    </button>
+                </h3>
+                <div id="playerRaceCollapse" class="accordion-collapse collapse" aria-labelledby="playerRaceHead" data-bs-parent="#leftMenu">
+                    <div id="playerRaceBody" class="accordion-body">
+                        <button id='Dragonborn' type="button" class="d-block btn btn-primary-subtle">Dragonborn</button>
+                        <button id='Dwarf' type="button" class="d-block btn btn-primary-subtle">Dwarf</button>
+                        <button id='Elf' type="button" class="d-block btn btn-primary-subtle">Elf</button>
+                        <button id='Gnome' type="button" class="d-block btn btn-primary-subtle">Gnome</button>
+                        <button id='Half-Elf' type="button" class="d-block btn btn-primary-subtle">Half-Elf</button>
+                        <button id='Half-Orc' type="button" class="d-block btn btn-primary-subtle">Half-Orc</button>
+                        <button id='Halfling' type="button" class="d-block btn btn-primary-subtle">Halfling</button>
+                        <button id='Human' type="button" class="d-block btn btn-primary-subtle">Human</button>
+                        <button id='Tiefling' type="button" class="d-block btn btn-primary-subtle">Tiefling</button>
+                    </div>
+                </div>
+            </div>
+            <div id="skillProf" class="accordion-item">
+                <h3 id='skillProfHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#skillsCollapse" aria-expanded="true" aria-controls="skillsCollapse">
+                        Skill Proficiencies
+                    </button>
+                </h3>
+                <div id="skillsCollapse" class="accordion-collapse collapse" aria-labelledby="skillProfHead" data-bs-parent="#leftMenu">
+                    <div id="skillProfBody" class="accordion-body">
+                        <button id='Acrobatics' type="button" class="d-block btn btn-primary-subtle">Acrobatics</button>
+                        <button id='Athletics' type="button" class="d-block btn btn-primary-subtle">Athletics</button>
+                        <button id='Deception' type="button" class="d-block btn btn-primary-subtle">Deception</button>
+                        <button id='History' type="button" class="d-block btn btn-primary-subtle">History</button>
+                        <button id='Insight' type="button" class="d-block btn btn-primary-subtle">Insight</button>
+                        <button id='Intimidation' type="button" class="d-block btn btn-primary-subtle">Intimidation</button>
+                        <button id='Investigation' type="button" class="d-block btn btn-primary-subtle">Investigation</button>
+                        <button id='Medicine' type="button" class="d-block btn btn-primary-subtle">Medicine</button>
+                        <button id='Nature' type="button" class="d-block btn btn-primary-subtle">Nature</button>
+                        <button id='Perception' type="button" class="d-block btn btn-primary-subtle">Perception</button>
+                        <button id='Performance' type="button" class="d-block btn btn-primary-subtle">Performance</button>
+                        <button id='Persuasion' type="button" class="d-block btn btn-primary-subtle">Persuasion</button>
+                        <button id='Religion' type="button" class="d-block btn btn-primary-subtle">Religion</button>
+                        <button id='Sleight of Hand' type="button" class="d-block btn btn-primary-subtle">Sleight of Hand</button>
+                        <button id='Stealth' type="button" class="d-block btn btn-primary-subtle">Stealth</button>
+                        <button id='Survival' type="button" class="d-block btn btn-primary-subtle">Survival</button>
+                    </div>
+                </div>
+            </div>
+            <div id="alignment" class="accordion-item">
+                <h3 id='alignmentHead' class="accordion-header">
+                    <button class="accordion-button bg-danger-subtle border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#alignmentCollapse" aria-expanded="true" aria-controls="alignmentCollapse">
+                        Alignments
+                    </button>
+                </h3>
+                <div id="alignmentCollapse" class="accordion-collapse collapse" aria-labelledby="alignmentHead" data-bs-parent="#leftMenu">
+                    <div id="alignmentBody" class="accordion-body">
+                        <button id='Lawful Good' type="button" class="d-block btn btn-primary-subtle">Lawful Good</button>
+                        <button id='Neutral Good' type="button" class="d-block btn btn-primary-subtle">Neutral Good</button>
+                        <button id='Chaotic Good' type="button" class="d-block btn btn-primary-subtle">Chaotic Good</button>
+                        <button id='Lawful Neutral' type="button" class="d-block btn btn-primary-subtle">Lawful Neutral</button>
+                        <button id='Neutral' type="button" class="d-block btn btn-primary-subtle">Neutral</button>
+                        <button id='Chaotic Neutral' type="button" class="d-block btn btn-primary-subtle">Chaotic Neutral</button>
+                        <button id='Lawful Evil' type="button" class="d-block btn btn-primary-subtle">Lawful Evil</button>
+                        <button id='Neutral Evil' type="button" class="d-block btn btn-primary-subtle">Neutral Evil</button>
+                        <button id='Chaotic Evil' type="button" class="d-block btn btn-primary-subtle">Chaotic Evil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5'>
+            <p id='statName' class='display-4 fst-italic text-center mb-4'>Pull up a seat and get comfortable...</p>
+        </div>
+    </div>
+    <span id="info" class="float-end">
+    </span>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
