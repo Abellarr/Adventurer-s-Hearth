@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
   </head>
     <title>DnD 5th edition info</title>
 </head>
@@ -18,7 +19,7 @@
             <p id="disclaimer" class="d-flex float-end text-center text-black ms-5 mb-2 ps-5 fst-italic fw-bold">*Mind the fire, would you? I'm sure the barkeep will be right with you.*</p>
         </div>
         <div class="btn-group d-flex justify-content-center" role="toolbar" aria-label="Top toolbar">
-            <a id="dndBeyond" type="button" class="btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://www.dndbeyond.com/" role="button">D&D Beyond</a>
+            <a id="dndBeyond" type="button" class="btn btn-secondary btn-outline-dark btn-outline-border-3 text-light " target="_blank" href="https://www.dndbeyond.com/" role="button">D&D Beyond</a>
             <a id="worldAnvil" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://www.worldanvil.com/">World Anvil</a>
             <a id="dndHomebrew" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://www.dandwiki.com/wiki/5e_Homebrew">D&D Homebrew Wiki</a>
             <a id="donJon" type="button" class="btn btn btn-secondary btn-outline-dark btn-outline-border-3 text-light" target="_blank" href="https://donjon.bin.sh/5e/">DonJon</a>
@@ -52,15 +53,15 @@
                 </h3>
                 <div id="playerRaceCollapse" class="accordion-collapse collapse" aria-labelledby="playerRaceHead" data-bs-parent="#leftMenu">
                     <div id="playerRaceBody" class="accordion-body bg-secondary-subtle">
-                        <button id='Dragonborn' type="button" class="d-block btn btn-primary-subtle">Dragonborn</button>
-                        <button id='Dwarf' type="button" class="d-block btn btn-primary-subtle">Dwarf</button>
-                        <button id='Elf' type="button" class="d-block btn btn-primary-subtle">Elf</button>
-                        <button id='Gnome' type="button" class="d-block btn btn-primary-subtle">Gnome</button>
-                        <button id='Half-Elf' type="button" class="d-block btn btn-primary-subtle">Half-Elf</button>
-                        <button id='Half-Orc' type="button" class="d-block btn btn-primary-subtle">Half-Orc</button>
-                        <button id='Halfling' type="button" class="d-block btn btn-primary-subtle">Halfling</button>
-                        <button id='Human' type="button" class="d-block btn btn-primary-subtle">Human</button>
-                        <button id='Tiefling' type="button" class="d-block btn btn-primary-subtle">Tiefling</button>
+                        <button id='dragonborn' type="button" class="d-block btn btn-primary-subtle">Dragonborn</button>
+                        <button id='dwarf' type="button" class="d-block btn btn-primary-subtle">Dwarf</button>
+                        <button id='elf' type="button" class="d-block btn btn-primary-subtle">Elf</button>
+                        <button id='gnome' type="button" class="d-block btn btn-primary-subtle">Gnome</button>
+                        <button id='half-elf' type="button" class="d-block btn btn-primary-subtle">Half-Elf</button>
+                        <button id='half-orc' type="button" class="d-block btn btn-primary-subtle">Half-Orc</button>
+                        <button id='halfling' type="button" class="d-block btn btn-primary-subtle">Halfling</button>
+                        <button id='human' type="button" class="d-block btn btn-primary-subtle">Human</button>
+                        <button id='tiefling' type="button" class="d-block btn btn-primary-subtle">Tiefling</button>
                     </div>
                 </div>
             </div>
@@ -72,12 +73,12 @@
                 </h3>
                 <div id="charFeaturesCollapse" class="accordion-collapse collapse" aria-labelledby="charFeaturesHead" data-bs-parent="#leftMenu">
                     <div id="charFeaturesBody" class="accordion-body bg-secondary-subtle">
-                        <button id='Alignment' type="button" class="d-block btn btn-primary-subtle">Lawful Good</button>
-                        <button id='Backgrounds' type="button" class="d-block btn btn-primary-subtle">Neutral Good</button>
-                        <button id='Inspiration' type="button" class="d-block btn btn-primary-subtle">Chaotic Good</button>
-                        <button id='Languages' type="button" class="d-block btn btn-primary-subtle">Lawful Neutral</button>
-                        <button id='Leveling Up' type="button" class="d-block btn btn-primary-subtle">Neutral</button>
-                        <button id='Multiclassing' type="button" class="d-block btn btn-primary-subtle">Multiclassing</button>
+                        <button id='alignment' type="button" class="d-block btn btn-primary-subtle">Alignment</button>
+                        <button id='backgrounds' type="button" class="d-block btn btn-primary-subtle">Backgrounds</button>
+                        <button id='inspiration' type="button" class="d-block btn btn-primary-subtle">Inspiration</button>
+                        <button id='languages' type="button" class="d-block btn btn-primary-subtle">Languages</button>
+                        <button id='levelingUp' type="button" class="d-block btn btn-primary-subtle">Leveling Up</button>
+                        <button id='multiclassing' type="button" class="d-block btn btn-primary-subtle">Multiclassing</button>
                     </div>
                 </div>
             </div>
@@ -112,22 +113,22 @@
                 </h3>
                 <div id="skillsCollapse" class="accordion-collapse collapse" aria-labelledby="skillProfHead" data-bs-parent="#leftMenu">
                     <div id="skillProfBody" class="accordion-body bg-secondary-subtle">
-                        <button id='Acrobatics' type="button" class="d-block btn btn-primary-subtle">Acrobatics</button>
-                        <button id='Athletics' type="button" class="d-block btn btn-primary-subtle">Athletics</button>
-                        <button id='Deception' type="button" class="d-block btn btn-primary-subtle">Deception</button>
-                        <button id='History' type="button" class="d-block btn btn-primary-subtle">History</button>
-                        <button id='Insight' type="button" class="d-block btn btn-primary-subtle">Insight</button>
-                        <button id='Intimidation' type="button" class="d-block btn btn-primary-subtle">Intimidation</button>
-                        <button id='Investigation' type="button" class="d-block btn btn-primary-subtle">Investigation</button>
-                        <button id='Medicine' type="button" class="d-block btn btn-primary-subtle">Medicine</button>
-                        <button id='Nature' type="button" class="d-block btn btn-primary-subtle">Nature</button>
-                        <button id='Perception' type="button" class="d-block btn btn-primary-subtle">Perception</button>
-                        <button id='Performance' type="button" class="d-block btn btn-primary-subtle">Performance</button>
-                        <button id='Persuasion' type="button" class="d-block btn btn-primary-subtle">Persuasion</button>
-                        <button id='Religion' type="button" class="d-block btn btn-primary-subtle">Religion</button>
-                        <button id='Sleight of Hand' type="button" class="d-block btn btn-primary-subtle">Sleight of Hand</button>
-                        <button id='Stealth' type="button" class="d-block btn btn-primary-subtle">Stealth</button>
-                        <button id='Survival' type="button" class="d-block btn btn-primary-subtle">Survival</button>
+                        <button id='acrobatics' type="button" class="d-block btn btn-primary-subtle">Acrobatics</button>
+                        <button id='athletics' type="button" class="d-block btn btn-primary-subtle">Athletics</button>
+                        <button id='deception' type="button" class="d-block btn btn-primary-subtle">Deception</button>
+                        <button id='history' type="button" class="d-block btn btn-primary-subtle">History</button>
+                        <button id='insight' type="button" class="d-block btn btn-primary-subtle">Insight</button>
+                        <button id='intimidation' type="button" class="d-block btn btn-primary-subtle">Intimidation</button>
+                        <button id='investigation' type="button" class="d-block btn btn-primary-subtle">Investigation</button>
+                        <button id='medicine' type="button" class="d-block btn btn-primary-subtle">Medicine</button>
+                        <button id='nature' type="button" class="d-block btn btn-primary-subtle">Nature</button>
+                        <button id='perception' type="button" class="d-block btn btn-primary-subtle">Perception</button>
+                        <button id='performance' type="button" class="d-block btn btn-primary-subtle">Performance</button>
+                        <button id='persuasion' type="button" class="d-block btn btn-primary-subtle">Persuasion</button>
+                        <button id='religion' type="button" class="d-block btn btn-primary-subtle">Religion</button>
+                        <button id='sleightOfHand' type="button" class="d-block btn btn-primary-subtle">Sleight of Hand</button>
+                        <button id='stealth' type="button" class="d-block btn btn-primary-subtle">Stealth</button>
+                        <button id='survival' type="button" class="d-block btn btn-primary-subtle">Survival</button>
                     </div>
                 </div>
             </div>
@@ -139,14 +140,14 @@
                 </h3>
                 <div id="equipmentCollapse" class="accordion-collapse collapse" aria-labelledby="equipmentHead" data-bs-parent="#leftMenu">
                     <div id="equipmentBody" class="accordion-body bg-secondary-subtle">
-                        <button id='Armor' type="button" class="d-block btn btn-primary-subtle">Armor</button>
-                        <button id='Weapons' type="button" class="d-block btn btn-primary-subtle">Weapons</button>
-                        <button id='Magic Items' type="button" class="d-block btn btn-primary-subtle">Magic Items</button>
-                        <button id='Adventuring Gear' type="button" class="d-block btn btn-primary-subtle">Adventuring Gear</button>
-                        <button id='Tools' type="button" class="d-block btn btn-primary-subtle">Tools</button>
-                        <button id='Mounts and Vehicles' type="button" class="d-block btn btn-primary-subtle">Mounts and Vehicles</button>
-                        <button id='Trade Goods' type="button" class="d-block btn btn-primary-subtle">Trade Goods</button>
-                        <button id='Expenses' type="button" class="d-block btn btn-primary-subtle">Expenses</button>
+                        <button id='armor' type="button" class="d-block btn btn-primary-subtle">Armor</button>
+                        <button id='weapons' type="button" class="d-block btn btn-primary-subtle">Weapons</button>
+                        <button id='magicItems' type="button" class="d-block btn btn-primary-subtle">Magic Items</button>
+                        <button id='adventuringGear' type="button" class="d-block btn btn-primary-subtle">Adventuring Gear</button>
+                        <button id='tools' type="button" class="d-block btn btn-primary-subtle">Tools</button>
+                        <button id='mountsAndVehicles' type="button" class="d-block btn btn-primary-subtle">Mounts and Vehicles</button>
+                        <button id='tradeGoods' type="button" class="d-block btn btn-primary-subtle">Trade Goods</button>
+                        <button id='expenses' type="button" class="d-block btn btn-primary-subtle">Expenses</button>
                     </div>
                 </div>
             </div>
@@ -158,14 +159,14 @@
                 </h3>
                 <div id="combatCollapse" class="accordion-collapse collapse" aria-labelledby="combatHead" data-bs-parent="#leftMenu">
                     <div id="combatBody" class="accordion-body bg-secondary-subtle">
-                        <button id='Conditions' type="button" class="d-block btn btn-primary-subtle">Conditions</button>
-                        <button id='Diseases' type="button" class="d-block btn btn-primary-subtle">Diseases</button>
-                        <button id='Madness' type="button" class="d-block btn btn-primary-subtle">Madness</button>
-                        <button id='Objects' type="button" class="d-block btn btn-primary-subtle">Objects</button>
-                        <button id='Poisons' type="button" class="d-block btn btn-primary-subtle">Poisons</button>
-                        <button id='Traps' type="button" class="d-block btn btn-primary-subtle">Traps</button>
-                        <button id='Poisons' type="button" class="d-block btn btn-primary-subtle">Poisons</button>
-                        <button id='Traps' type="button" class="d-block btn btn-primary-subtle">Traps</button>
+                        <button id='actionsInCombat' type="button" class="d-block btn btn-primary-subtle">Actions in Combat</button>
+                        <button id='attacking' type="button" class="d-block btn btn-primary-subtle">Attacking</button>
+                        <button id='combatSequence' type="button" class="d-block btn btn-primary-subtle">Combat Sequence</button>
+                        <button id='cover' type="button" class="d-block btn btn-primary-subtle">Cover</button>
+                        <button id='damageHealing' type="button" class="d-block btn btn-primary-subtle">Damage and Healing</button>
+                        <button id='mountedCombat' type="button" class="d-block btn btn-primary-subtle">Mounted Combat</button>
+                        <button id='movementInCombat' type="button" class="d-block btn btn-primary-subtle">Movement in Combat</button>
+                        <button id='underwaterCombat' type="button" class="d-block btn btn-primary-subtle">Underwater Combat</button>
                     </div>
                 </div>
             </div>
@@ -195,7 +196,7 @@
             </div>
         </div>
         <div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5 pb-4'>
-            <p id='statName' class='display-4 fst-italic text-center mb-4'>Pull up a seat and get comfortable...</p>
+            <p id='statName' class='display-4 fst-italic fw-semibold text-center mb-4'>Pull up a seat and get comfortable...</p>
         </div>
     </div>
     <span id="info" class="float-end">

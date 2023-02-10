@@ -1,6 +1,6 @@
-$('#infoContainer').append(`<p id='introText1' class='text-start fw-light fs-4 mb-5'></p>`);
+$('#infoContainer').append(`<p id='introText1' class='text-start fs-4 mb-5'></p>`);
 $('#introText1').text(`Welcome to The Adventurer's Hearth, the inn on the side of the road to wherever your headed that every adventure seems to start. Gather friends and peruse the topics here in our library, then get started on an adventure of your own!`)
-$('#infoContainer').append(`<p id='introText2' class='text-start fw-light fst-italic fs-5 mb-5'></p>`);
+$('#infoContainer').append(`<p id='introText2' class='text-start fst-italic fs-5 mb-5'></p>`);
 $('#introText2').text(`On the left side of your screen, you'll see a navigation bar that will spirit you away to whatever topic you wish to learn more about. All material is referenced from the official Dungeons and Dragons 5th Edition System Reference Document (SRD 5.1) and covered by the Open-Gaming License (OGL 1.0a). At the top of the page, you'll find links that travel across the multiverse to libraries on different planes of existence- even some with knowledge we've never seen!`)
 $('#infoContainer').append(`<img id='introImage' src='https://images.alphacoders.com/110/thumb-1920-1107087.jpg' class='img-fluid rounded-3 border border-black shadow'></p>`);
 
@@ -16,7 +16,7 @@ function getStats(string) {
     console.log(statSearcher);
     $('#infoContainer').remove();
     $('#infoBox').append(`<div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 p-5'></div>`);
-    $('#infoContainer').append(`<p id='statName' class='display-3 fw-bold text-center mb-4'></p>`);
+    $('#infoContainer').append(`<p id='statName' class='display-3 fw-bold text-center fst-italic mb-4'></p>`);
     $('#infoContainer').append(`<p id='statInfo1' class='text-center fs-3 mx-5'></p>`);
     $('#statInfo1').after(`<p id='statInfo2' class='fw-light text-center fst-italic fs-5 mx-5'></p>`);
 
@@ -42,7 +42,7 @@ function getClasses(string) {
     console.log(string);
     $('#infoContainer').remove();
     $('#infoBox').append(`<div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5'></div>`);
-    $('#infoContainer').append(`<p id='className' class='display-3 fw-bold text-center mb-4'></p>`);
+    $('#infoContainer').append(`<p id='className' class='display-3 fw-bold text-center fst-italic mb-4'></p>`);
     $('#infoContainer').append(`<p id='classDesc' class='text-start fw-light fst-italic fs-4 mb-5'></p>`);
     $('#infoContainer').append(`<p id='hitDie' class='fw-light fs-3'></p>`);
     $('#infoContainer').append(`<p id='hitDie1st' class='fw-light fs-3'></p>`);
@@ -52,7 +52,7 @@ function getClasses(string) {
     $('#infoContainer').append(`<p id='profTools' class='fw-light fs-3'></p>`);
     $('#infoContainer').append(`<p id='profSaves' class='fw-light fs-3'></p>`);
     $('#infoContainer').append(`<p id='profSkills' class='fw-light fs-3'></p>`);
-    $.get(`https://api.open5e.com/classes`, (data) => {
+    $.get(`https://api.open5e.com/classes/`, (data) => {
         console.log(data);
         let className = '';
         let classDesc = '';
@@ -91,7 +91,128 @@ function getClasses(string) {
     })
 }
 
+$('#playerRaceBody').on('click', function() {
+    let eventTarget = event.target;
+    let eventString = eventTarget.getAttribute('id').toString();
+    getRaces(eventString);
+}) 
 
+function getRaces(string) {
+    console.log(string);
+    $('#infoContainer').remove();
+    $('#infoBox').append(`<div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5'></div>`);
+    $('#infoContainer').append(`<p id='raceName' class='display-3 fw-bold text-center fst-italic mb-4'></p>`);
+    $('#infoContainer').append(`<p id='abilityBonus' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='age' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='align' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='size' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='speed' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='langDesc' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='traits' class='fw-light fs-3'></p>`);
+    $.get(`https://www.dnd5eapi.co/api/races/${string}`, (data) => {
+        console.log(data);
+        let raceName = data.name;
+        let mainAbilityBonus = data.ability_bonuses[0].ability_score.name;
+        let abilityBonusNum1 = data.ability_bonuses[0].bonus.toString();
+        let secondAbilityBonus = '';
+        let abilityBonusNum2 = '';
+        let align = data.alignment;
+        let languageDesc = data.language_desc;
+        let size = data.size;
+        let sizeDesc = data.size_description;
+        let speed = data.speed.toString()
+        let age = data.age;
+        let traits = '';
+        if (data.ability_bonuses[1] !== undefined) {
+            secondAbilityBonus = data.ability_bonuses[1].ability_score.name;
+            abilityBonusNum2 = data.ability_bonuses[1].bonus.toString();
+        }
+        if (data.ability_bonuses.length > 2) {
+            mainAbilityBonus = 'Your ability scores each increase by'
+        }
+        if (data.traits.length === 0) {
+            traits += `None`
+        }
+        for (let i=0;i<data.traits.length;i++) {
+            if (i == 0 && data.traits.length !== 0) {
+                traits += data.traits[i].name;
+            } else {
+                traits += `, ${data.traits[i].name}`;
+            }
+        }
+        $('#raceName').html(raceName);
+        if (raceName == 'human' || abilityBonusNum2 == '') {
+            $('#abilityBonus').html(`<b>Ability Score Increase:</b> ${mainAbilityBonus} +${abilityBonusNum1}.`);
+        } else {
+            $('#abilityBonus').html(`<b>Ability Score Increase:</b> ${mainAbilityBonus} +${abilityBonusNum1}, ${secondAbilityBonus} +${abilityBonusNum2}.`);
+        }
+        $('#age').html(`<b>Age:</b> ${age}`);
+        $('#align').html(`<b>Alignment:</b> ${align}`);
+        $('#size').html(`<b>Size:</b> ${size}. ${sizeDesc}`);
+        $('#speed').html(`<b>Speed:</b> Your base walking speed is ${speed} feet.`);
+        $('#langDesc').html(`<b>Languages:</b> ${languageDesc}`);
+        $('#traits').html(`<b>Racial Traits:</b> ${traits}.`);
+    })
+}
+
+$('#alignment').on('click', function() {
+    let eventTarget = event.target;
+    let eventString = eventTarget.getAttribute('id').toString();
+    getAlignments(eventString);
+}) 
+
+function getAlignments(string) {
+    console.log(string);
+    $('#infoContainer').remove();
+    $('#infoBox').append(`<div id='infoContainer' class='d-inline-block bg-secondary-subtle border border-secondary rounded-4 align-top w-75 ms-5 mb-5 p-5'></div>`);
+    $('#infoContainer').append(`<p id='alignment' class='display-3 fw-bold text-center fst-italic mb-4'>Alignments</p>`);
+    $('#infoContainer').append(`<p id='lawful-good' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='neutral-good' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='chaotic-good' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='lawful-neutral' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='neutral' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='chaotic-neutral' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='lawful-evil' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='neutral-evil' class='fw-light fs-3'></p>`);
+    $('#infoContainer').append(`<p id='chaotic-evil' class='fw-light fs-3'></p>`);
+
+    $.get(`https://www.dnd5eapi.co/api/alignments/lawful-good`, data => {
+        let lawfulGood = data.desc;
+        $('#lawful-good').html(`<b>${data.name}</b> - ${lawfulGood}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/neutral-good`, data => {
+        let neutralGood = data.desc;
+        $('#neutral-good').html(`<b>${data.name}</b> - ${neutralGood}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/chaotic-good`, data => {
+        let chaoticGood = data.desc;
+        $('#chaotic-good').html(`<b>${data.name}</b> - ${chaoticGood}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/lawful-neutral`, data => {
+        let lawfulNeutral = data.desc;
+        $('#lawful-neutral').html(`<b>${data.name}</b> - ${lawfulNeutral}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/neutral`, data => {
+        let neutr = data.desc;
+        $('#neutral').html(`<b>${data.name}</b> - ${neutr}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/chaotic-neutral`, data => {
+        let chaoticNeutral = data.desc;
+        $('#chaotic-neutral').html(`<b>${data.name}</b> - ${chaoticNeutral}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/lawful-evil`, data => {
+        let lawfulEvil = data.desc;
+        $('#lawful-evil').html(`<b>${data.name}</b> - ${lawfulEvil}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/neutral-evil`, data => {
+        let neutralEvil = data.desc;
+        $('#neutral-evil').html(`<b>${data.name}</b> - ${neutralEvil}`);
+    })
+    $.get(`https://www.dnd5eapi.co/api/alignments/chaotic-evil`, data => {
+        let chaoticEvil = data.desc;
+        $('#chaotic-evil').html(`<b>${data.name}</b> - ${chaoticEvil}`);
+    })
+}
 
 
 
